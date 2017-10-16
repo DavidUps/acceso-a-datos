@@ -1,11 +1,17 @@
 
 import java.io.*;
+import java.util.Scanner;
 
-public class CrearFicheros {
+public class CrearFicheroConVariable {
 
 	public static void main(String[] args) {
 		
-		File fichero = new File("Hola.txt");
+		System.out.println("Introduce el nombre del fichero que quieras guardar");
+		
+		Scanner sc = new Scanner(System.in);
+		String nombreFichero = sc.nextLine();
+		
+		File fichero = new File( nombreFichero + ".txt");
 		
 		try {
 			if (fichero.createNewFile() == true) {
@@ -16,7 +22,6 @@ public class CrearFicheros {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 }
