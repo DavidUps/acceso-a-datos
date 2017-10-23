@@ -35,21 +35,33 @@ public class ficherosTexto {
 	public static void leerFichero(String[] lista, char[] nombre)
 	{
 		
-		try {
+		try 
+		{
 			File fichero = new File("ficheroNombres.txt");
 			FileReader ficheroLectura = new FileReader(fichero);
 			//2.- Leer nombres
 			//lee 4 caracteres a capon
 			
 			int res, i=0;
+			boolean romper=false;
 			
 			res = ficheroLectura.read(nombre);
 			while(res !=-1)
 			{
+				for(int a=0; a<nombre.length;a++)
+				{
+					if(nombre[a] == '*')
+					{
+						romper = true;
+						break;
+					}
+				}
 				lista[i] = String.valueOf(nombre);
+				if(romper==true)
+					break;
 				res = ficheroLectura.read(nombre);
 				i++;
-			}
+			}	
 			ficheroLectura.close();
 		}
 		catch (IOException e) {
@@ -75,7 +87,9 @@ public class ficherosTexto {
 		imprimirTabla(lista);
 		leerFichero(lista, nombre);
 		imprimirTabla(lista);
-		
+		System.out.println(lista[0]);
+		System.out.println(lista[1]);
+		System.out.println(lista[2]);
 	}
 	
 }
