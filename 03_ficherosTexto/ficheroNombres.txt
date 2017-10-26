@@ -1,1 +1,1 @@
-Pepe*Ana*Juan*
+Pepe;Ana;Juan
