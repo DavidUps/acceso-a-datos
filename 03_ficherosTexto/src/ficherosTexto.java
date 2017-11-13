@@ -51,11 +51,11 @@ public class ficherosTexto {
 				
 				cadenaFichero = cadenaFichero + String.valueOf(nombre);
 				res =ficheroLectura.read(nombre);
-				i++;
-				//hacer el split
+				
 			}
 			ficheroLectura.close();
-			String [] corte =  new String[6];
+			//hacer el split
+			String [] corte =  new String[16];
 			corte = cadenaFichero.split(";");
 			for(int g=0; g<lista.length;g++)
 			{
