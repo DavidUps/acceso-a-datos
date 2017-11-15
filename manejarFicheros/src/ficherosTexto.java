@@ -1,7 +1,7 @@
 import java.io.*;
 import java.nio.channels.CancelledKeyException;
 
-public class ficherosTexto {
+public class ficherosTexto{
 
 	public static void escribirFichero(String[] lista) {
 
