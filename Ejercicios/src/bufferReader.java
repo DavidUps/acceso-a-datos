@@ -59,19 +59,17 @@ public class bufferReader {
 		}
 	}
 
-	public static void meterPersonas(String[] lista, Persona [] people) {
-		int i=0;
+	public static void meterPersonas(String[] lista, Persona [] people)
+	{
 		int a=0;
 		
-		while(lista[i] != null)
-		{
-			people[i].meterNombre(lista[a]);
+		for(int i=0;i<lista.length;i+=3)
+		{ 
+			people[a] = new Persona();
+			people[a].meterNombre(lista[i]);
+			people[a].meterApellido(lista[i+1]);
+			people[a].meterEdad(lista[i+2]);
 			a++;
-			people[i].meterApellido(lista[a]);
-			a++;
-			people[i].meterEdad(lista[a]);
-			a++;
-			i++;
 		}
 	}
 	
@@ -86,6 +84,7 @@ public class bufferReader {
 		// TODO Auto-generated method stub
 		
 		int p;
+		
 		String [] lista = {"David","Arribas","21","Jose","Manuel","21","Jonatan","Domingas","23"};
 		
 		Persona [] people = new Persona[5];

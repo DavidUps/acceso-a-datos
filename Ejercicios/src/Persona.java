@@ -6,6 +6,12 @@ public class Persona {
 	
 	private int edad;
 	
+	public Persona()
+	{
+		nombre = "";
+		apellido = "";
+		edad = 0;
+	}
 	public Persona(String n, String a, int e)
 	{
 		n = nombre;
